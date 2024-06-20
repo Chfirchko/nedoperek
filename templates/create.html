@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>{% block title %} Добавить еду {% endblock %}</h1>
+<form method="post">
+    <p>
+        <label for="title">Тема</label>
+        <input type="text" name="title" placeholder="Название">
+        </input>
+    </p>
+
+    <p>
+        <label for="provider">Автор</label>
+        <input type="text" name="provider" placeholder="Поставщик">
+        </input>
+    </p>
+
+    <p>
+        <label for="foodText">Анекдот:</label>
+        <br>
+        <textarea name="foodText" placeholder="Ваш продукт" rows="15" cols="60"></textarea>
+    </p>
+    <p>
+        <button type="submit">Добавить</button>
+    </p>
+</form>
+{% endblock %}

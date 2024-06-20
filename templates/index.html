@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>{% block title %} Продукты {% endblock %}</h1>
+{% for food in foods %}
+<div class='Foods'>
+    <h3>#{{ food[0] }} - {{ food[1] }} by {{ food[2] }}</h3>
+
+    <p class='foodText'>{{ food[3] }}</p>
+    <i>
+        <p>Добавлен {{ food[4] }}</p>
+    </i>
+</div>
+{% endfor %}
+{% endblock %}
