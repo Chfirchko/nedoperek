@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, url_for, redirect
+from flask import Flask, render_template, request, url_for, redirect, make_response
 import psycopg2
 
 
@@ -51,3 +51,17 @@ def create():
 @app.route('/basket/')
 def basket():
     return render_template('basket.html')
+
+@app.route('/login/')
+def login():
+    log = ''
+    if request.cookies.get('logged'):
+        log = request.cookies.get('logged')
+    res = make_response(f'<h1>Форма авторизации</h1><p>logged: {log}')
+    res.set_cookie("logged", "yes", 600)
+    return res
+@app.route('/logout/')
+def logout():
+    res = make_response("<p>Вы вышли</p>")
+    res.set_cookie("logged", "", 0)
+    return res
