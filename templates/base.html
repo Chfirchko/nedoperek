@@ -3,8 +3,8 @@
 
 <head>
     <meta charset="UTF-8">
-    <link href="https://pyscript.net/alpha/pyscript.css" />
-<script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+<!--    <link href="https://pyscript.net/alpha/pyscript.css" />-->
+<!--<script defer src="https://pyscript.net/alpha/pyscript.js"></script>-->
     <title>{% block title %} {% endblock %}- FlaskApp</title>
     <style>
         nav a {
@@ -32,6 +32,8 @@
         <a href="{{ url_for('index') }}">Главная страница</a>
         <a href="{{ url_for('create') }}">Добавить позицию</a>
         <a href="{{ url_for('basket') }}">Корзина</a>
+        <a href="{{ url_for('login') }}">Авторизация</a>
+
     </nav>
     <hr>
     <div class="content">

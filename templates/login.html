@@ -2,7 +2,24 @@
 
 {% block content %}
 <h1>{% block title %} Авторизация {% endblock %}</h1>
-<h2>Форма регистрации</h2><p>logged: {log}
-{% endfor %}
+
+<h2>Форма регистрации</h2>
+<form action="/login" method="post" class="form-contact">
+    <p>
+        <label for="mail">Mail: </label>
+        <input type="text" name="email" value="" required
+        />
+    <p>
+    <label for="psw">Пароль: </label>
+    <input type="password" name="psw" value="" required
+    />
+    <p>
+    <input type="submit" value="Войти" />
+    <p>
+    <a href="{{ url_for('register') }}">Регистрация</a>
+</p>
+</form>
+
+
 
 {% endblock %}

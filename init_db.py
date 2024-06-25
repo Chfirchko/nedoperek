@@ -24,11 +24,11 @@ cursor.execute('create table Foods (id serial primary key,'
 
 
 # создание таблицы корзины пользователя
-cursor.execute('create table Basket (id serial primary key,'
-               'title varchar (150) not null,'
-               'provider varchar (150) not null,'
-               'description text,'
-               'date_added date default current_timestamp);')
+cursor.execute('DROP TABLE IF EXISTS Users;')
+cursor.execute('create table Users (id serial primary key,'
+               'name text,'
+               'email text,'
+               'psw text);')
 # вставка строки
 
 cursor.execute('insert into Foods (title, provider, description)'
